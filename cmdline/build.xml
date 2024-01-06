@@ -111,7 +111,7 @@
         </exec>
         <echo>Building maven plugin:</echo>
         <exec dir="maven" executable="mvn" failonerror="true">
-            <arg line="-Dversion=${version} install -DskipTests" />
+            <arg line="-Dversion=${version} install -DskipTests -X" />
         </exec>
         <echo>Run plugin tests:</echo>
         <exec dir="maven" executable="mvn" failonerror="true">
