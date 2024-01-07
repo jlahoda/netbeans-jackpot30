@@ -109,16 +109,9 @@
         <exec dir="." executable="mvn" failonerror="true">
             <arg line="install:install-file -Dfile=tool/build/jackpot/jackpot.jar -DgroupId=org.apache.netbeans.modules.jackpot30 -DartifactId=tool -Dversion=${version} -Dpackaging=jar -DpomFile=tool/scripts/pom.xml" />
         </exec>
-        <echo>Debugging:</echo>
-        <exec dir="." executable="find" failonerror="true">
-            <arg line="/home/runner/.m2" />
-        </exec>
-        <exec dir="." executable="jar" failonerror="true">
-            <arg line="tf /home/runner/.m2/repository/org/apache/netbeans/modules/jackpot30/tool/20.0/tool-20.0.jar" />
-        </exec>
         <echo>Building maven plugin:</echo>
         <exec dir="maven" executable="mvn" failonerror="true">
-            <arg line="-Dversion=${version} install -DskipTests -X" />
+            <arg line="-Dversion=${version} install -DskipTests" />
         </exec>
         <echo>Run plugin tests:</echo>
         <exec dir="maven" executable="mvn" failonerror="true">
