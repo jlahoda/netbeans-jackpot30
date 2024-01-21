@@ -31,8 +31,6 @@ concurrency:
 
 jobs:
 
-  # primary build job, most other jobs use the artifact produced here
-  # artifact is only produced once in the matrix
   base-build:
     name: Build Jackpot 3.0
     runs-on: ubuntu-latest
@@ -47,7 +45,7 @@ jobs:
 
       - name: Set up Ubuntu dependencies
         run: |
-            sudo apt install ant ant-optional openjdk-11-jdk openjdk-17-jdk openjdk-21-jdk
+            sudo apt install openjdk-11-jdk openjdk-17-jdk openjdk-21-jdk
 
       - name: Set up NetBeans
         run: |
