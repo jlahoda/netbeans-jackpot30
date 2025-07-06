@@ -45,7 +45,7 @@ jobs:
 
       - name: Set up Ubuntu dependencies
         run: |
-            sudo apt install openjdk-17-jdk openjdk-21-jdk
+            sudo apt install openjdk-17-jdk openjdk-21-jdk openjdk-24-jdk
 
       - name: Set up NetBeans
         run: |
@@ -62,6 +62,7 @@ jobs:
         run: |
             export JDK17=/usr/lib/jvm/java-17-openjdk-amd64
             export JDK21=/usr/lib/jvm/java-21-openjdk-amd64
+            export JDK24=/usr/lib/jvm/java-24-openjdk-amd64
             export JAVA_HOME=$JDK17
             export PATH=$JAVA_HOME/bin:$PATH
-            (cd cmdline; ant -Dnbplatform.default.harness.dir=$HOME/netbeans/harness -DNETBEANS_PLATFORM=$HOME/netbeans -DJDK17=$JDK17 -DJDK21=$JDK21 build-and-test)
+            (cd cmdline; ant -Dnbplatform.default.harness.dir=$HOME/netbeans/harness -DNETBEANS_PLATFORM=$HOME/netbeans -DJDK17=$JDK17 -DJDK21=$JDK21 -DJDK24=$JDK24 build-and-test)

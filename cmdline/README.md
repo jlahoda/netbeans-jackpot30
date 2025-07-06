@@ -28,7 +28,7 @@ This tool allows to run NetBeans Java code checker without the NetBeans IDE. Thi
 #### To Build
 
 * Apache NetBeans 26
-* JDK 17 and JDK 21
+* JDK 17, JDK 21 and JDK 24
 * bash
 * Apache ant 1.9.9 or above
 * Apache Maven 3.3.9 or above
@@ -42,7 +42,7 @@ This tool allows to run NetBeans Java code checker without the NetBeans IDE. Thi
 Build using:
 
 ```
-$ ant -DNETBEANS_PLATFORM=<path-to-NetBeans-26> -DJDK17=<path-to-JDK-17> -DJDK21=<path-to-JDK-21> build-and-test
+$ ant -DNETBEANS_PLATFORM=<path-to-NetBeans-26> -DJDK17=<path-to-JDK-17> -DJDK21=<path-to-JDK-21> -DJDK24=<path-to-JDK24> build-and-test
 ```
 
 The built product is in tool/build/jackpot.

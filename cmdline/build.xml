@@ -77,6 +77,13 @@
             <property name="jackpot.root" location="${jackpot.root}" />
             <target name="test" />
         </ant>
+        <ant dir="${basedir}" inheritAll="false" inheritRefs="false">
+            <property name="nbplatform.default.harness.dir" value="${NETBEANS_PLATFORM}/harness" />
+            <property name="nbplatform.default.netbeans.dest.dir" value="${NETBEANS_PLATFORM}" />
+            <property name="test.nbjdk.home" value="${JDK24}" />
+            <property name="jackpot.root" location="${jackpot.root}" />
+            <target name="test" />
+        </ant>
         <ant dir="${basedir}/tool" target="create-standalone-tool" inheritAll="false" inheritRefs="false">
             <property name="nbplatform.default.harness.dir" value="${NETBEANS_PLATFORM}/harness" />
             <property name="nbplatform.default.netbeans.dest.dir" value="${NETBEANS_PLATFORM}" />
@@ -93,6 +100,10 @@
         <exec executable="build/test/scripted/run" dir="tool" failonerror="true">
             <env key="JAVA_HOME" path="${JDK21}" />
             <env key="PATH" path="${JDK21}/bin:${env.PATH}" />
+        </exec>
+        <exec executable="build/test/scripted/run" dir="tool" failonerror="true">
+            <env key="JAVA_HOME" path="${JDK24}" />
+            <env key="PATH" path="${JDK24}/bin:${env.PATH}" />
         </exec>
         <echo>Installing tool to the local maven repository:</echo>
         <exec dir="." executable="mvn" failonerror="true">
