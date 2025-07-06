@@ -66,13 +66,6 @@
         <ant dir="${basedir}" inheritAll="false" inheritRefs="false">
             <property name="nbplatform.default.harness.dir" value="${NETBEANS_PLATFORM}/harness" />
             <property name="nbplatform.default.netbeans.dest.dir" value="${NETBEANS_PLATFORM}" />
-            <property name="test.nbjdk.home" value="${JDK11}" />
-            <property name="jackpot.root" location="${jackpot.root}" />
-            <target name="test" />
-        </ant>
-        <ant dir="${basedir}" inheritAll="false" inheritRefs="false">
-            <property name="nbplatform.default.harness.dir" value="${NETBEANS_PLATFORM}/harness" />
-            <property name="nbplatform.default.netbeans.dest.dir" value="${NETBEANS_PLATFORM}" />
             <property name="test.nbjdk.home" value="${JDK17}" />
             <property name="jackpot.root" location="${jackpot.root}" />
             <target name="test" />
@@ -92,10 +85,6 @@
         </ant>
         <property environment="env"/>
         <exec executable="build/test/scripted/run" dir="tool" failonerror="true">
-        </exec>
-        <exec executable="build/test/scripted/run" dir="tool" failonerror="true">
-            <env key="JAVA_HOME" path="${JDK11}" />
-            <env key="PATH" path="${JDK11}/bin:${env.PATH}" />
         </exec>
         <exec executable="build/test/scripted/run" dir="tool" failonerror="true">
             <env key="JAVA_HOME" path="${JDK17}" />
