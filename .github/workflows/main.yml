@@ -48,19 +48,11 @@ jobs:
             sudo apt update
             sudo apt install openjdk-17-jdk openjdk-21-jdk
 
-      - name: Download latest JDK 24
-        run: |
-            PROC=`uname -p`
-            if [ "$PROC" = "x86_64" ] ; then PROC="x64"; fi;
-            URL=`wget https://raw.githubusercontent.com/oracle-actions/setup-java/refs/heads/main/jdk.java.net-uri.properties -O - | grep "24,latest,linux,$PROC" | cut -d '=' -f 2-`
-            wget $URL -O $RUNNER_TEMP/jdk-24.tar.gz
-
-      - name: Set up JDK 24 from the downloaded archive
-        uses: actions/setup-java@v5
+      - name: Set up latest JDK 24 from jdk.java.net
+        uses: oracle-actions/setup-java@b1546e588c27008e88bfcabda44d11c22316b9b8 # v1.4.2
         with:
-            distribution: 'jdkfile'
-            jdkFile: ${{ runner.temp }}/jdk-24.tar.gz
-            java-version: '24'
+            website: jdk.java.net
+            release: 24
 
       - name: Set up NetBeans
         run: |
