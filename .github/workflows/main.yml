@@ -59,7 +59,7 @@ jobs:
         uses: actions/setup-java@v5
         with:
             distribution: 'jdkfile'
-            jdkFile: ${{ runner.temp }}/java_package.tar.gz
+            jdkFile: ${{ runner.temp }}/jdk-24.tar.gz
             java-version: '24'
 
       - name: Set up NetBeans
