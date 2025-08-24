@@ -60,6 +60,7 @@ jobs:
         with:
             distribution: 'jdkfile'
             jdkFile: ${{ runner.temp }}/java_package.tar.gz
+            java-version: '24'
 
       - name: Set up NetBeans
         run: |
